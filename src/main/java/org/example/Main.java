@@ -7,8 +7,8 @@ public class Main {
     public static void main(String[] args) {
 
         ArrayList<Integer> numbers = getNumbers();
+        numbers.stream().forEach(System.out::println);
 
-        ArrayList<Integer> evenNumbers = getEvenNumbers(numbers);
 
         System.out.println("Numere pare:");
         System.out.println(evenNumbers);
@@ -23,35 +23,5 @@ public class Main {
         }
 
         return numbers;
-    }
-
-    static ArrayList<Integer> filterEvenNumbers(ArrayList<Integer> numbers) {
-
-        ArrayList<Integer> evenNumbers = new ArrayList<>();
-
-        for (int i = 0; i < numbers.size(); i++) {
-
-            if (numbers.get(i) % 2 == 0) {
-
-                evenNumbers.add(numbers.get(i));
-            }
-        }
-
-        return evenNumbers;
-    }
-
-    static ArrayList<Integer> filterOddNumbers(ArrayList<Integer> numbers) {
-
-        ArrayList<Integer> oddNumbers = new ArrayList<>();
-
-        for (int i = 0; i < numbers.size(); i++) {
-
-            if (numbers.get(i) % 2 != 0) {
-
-                oddNumbers.add(numbers.get(i));
-            }
-        }
-
-        return oddNumbers;
     }
 }
