@@ -1,25 +1,57 @@
 package org.example;
-import java.util.ArrayList
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+import java.util.ArrayList;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        ArrayList<Integer> numbers = getNumbers();
+
+        ArrayList<Integer> evenNumbers = getEvenNumbers(numbers);
+
+        System.out.println("Numere pare:");
+        System.out.println(evenNumbers);
     }
-    static void getNumbers(){
-        ArrayList<Integer> numbers=new ArrayList<>();
-        for(int i=1;i<=100;i++)
-        {
+
+    static ArrayList<Integer> getNumbers() {
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        for (int i = 1; i <= 100; i++) {
             numbers.add(i);
-            System.out.println(i);
         }
+
+        return numbers;
+    }
+
+    static ArrayList<Integer> filterEvenNumbers(ArrayList<Integer> numbers) {
+
+        ArrayList<Integer> evenNumbers = new ArrayList<>();
+
+        for (int i = 0; i < numbers.size(); i++) {
+
+            if (numbers.get(i) % 2 == 0) {
+
+                evenNumbers.add(numbers.get(i));
+            }
+        }
+
+        return evenNumbers;
+    }
+
+    static ArrayList<Integer> filterOddNumbers(ArrayList<Integer> numbers) {
+
+        ArrayList<Integer> oddNumbers = new ArrayList<>();
+
+        for (int i = 0; i < numbers.size(); i++) {
+
+            if (numbers.get(i) % 2 != 0) {
+
+                oddNumbers.add(numbers.get(i));
+            }
+        }
+
+        return oddNumbers;
     }
 }
