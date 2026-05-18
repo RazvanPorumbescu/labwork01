@@ -9,7 +9,7 @@ public class Main {
         ArrayList<Integer> numbers = getNumbers();
         numbers.stream().forEach(System.out::println);
         numbers.stream().filter(i->i%2==0).forEach(System.out::println);
-
+        numbers.stream().filter(i->i%2!=0).forEach(System.out::println);
         System.out.println("Numere pare:");
         System.out.println(evenNumbers);
     }
